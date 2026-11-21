@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="tm-root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Token Matrix — class probe</title>
+  <meta name="description" content="A page whose elements each vary one class factor.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.13"></script>
+  <style type="text/tailwindcss">
+    @theme inline {
+      --color-background: var(--background);
+      --color-foreground: var(--foreground);
+      --color-primary: var(--primary);
+      --color-primary-foreground: var(--primary-foreground);
+      --color-secondary: var(--secondary);
+      --color-accent: var(--accent);
+      --color-muted-foreground: var(--muted-foreground);
+      --color-border: var(--border);
+      --color-brand: var(--brand);
+    }
+    :root {
+      --background: oklch(98% 0.01 250);
+      --foreground: oklch(20% 0.02 260);
+      --primary: oklch(55% 0.2 260);
+      --primary-foreground: oklch(98% 0 0);
+      --secondary: oklch(92% 0.02 260);
+      --accent: oklch(85% 0.1 150);
+      --muted-foreground: oklch(50% 0.02 260);
+      --border: oklch(85% 0.01 260);
+      --brand: oklch(65% 0.2 30);
+    }
+  </style>
+  <style>
+    /* Plain CSS rules for elements without utility classes. */
+    #id-only { padding: 12px 16px; background: oklch(90% 0.05 80); border-radius: 6px; }
+    #id-important { text-transform: none !important; letter-spacing: 0.02em; }
+    .custom-card { box-shadow: 0 1px 3px rgb(0 0 0 / 0.2); padding: 20px; }
+    .custom-card:hover { box-shadow: 0 4px 12px rgb(0 0 0 / 0.25); }
+    @media (min-width: 768px) { .custom-card { padding: 32px; } }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+  <header class="flex items-center justify-between border-b border-border px-6 py-4">
+    <a href="./" class="font-semibold">Token Matrix</a>
+    <nav class="flex gap-4 text-sm">
+      <a href="docs/guide/" class="text-muted-foreground hover:text-foreground">Guide</a>
+      <a href="v1.2/notes.html" class="text-muted-foreground hover:text-foreground">Notes</a>
+    </nav>
+  </header>
+  <main class="mx-auto max-w-4xl space-y-10 px-6 py-10">
+    <section>
+      <h1 class="text-4xl font-bold">Class factor matrix</h1>
+      <p class="mt-2 text-muted-foreground">Each row varies one factor; see data-tm on each element.</p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Role pinned versus unpinned</h2>
+      <div data-tm="role-pinned-bg" class="bg-primary text-primary-foreground rounded-md p-3">bg-primary (shadcn role)</div>
+      <div data-tm="role-unpinned-bg" class="bg-brand text-white rounded-md p-3">bg-brand (site-only role)</div>
+      <div data-tm="role-pinned-text" class="text-primary">text-primary</div>
+      <div data-tm="role-secondary-bg" class="bg-secondary rounded-md p-3">bg-secondary</div>
+      <div data-tm="role-accent-bg" class="bg-accent rounded-md p-3">bg-accent</div>
+      <div data-tm="role-background-bg" class="bg-background border border-border p-3">bg-background</div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Variants versus base</h2>
+      <button data-tm="variant-disabled" disabled class="opacity-100 disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed rounded-md border px-4 py-2">disabled button</button>
+      <button data-tm="variant-hover" class="bg-secondary hover:bg-primary hover:text-primary-foreground rounded-md px-4 py-2">hover button</button>
+      <div data-tm="variant-responsive" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded border p-2">one</div><div class="rounded border p-2">two</div><div class="rounded border p-2">three</div>
+      </div>
+      <a data-tm="variant-focus" href="#x" class="underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">focus link</a>
+      <div data-tm="variant-arbitrary" class="[&_svg]:size-4 [&_svg]:shrink-0 flex items-center gap-2"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>arbitrary selector variant</div>
+      <div data-tm="fraction-opacity" class="bg-primary/80 text-primary-foreground p-2">bg-primary/80</div>
+      <div data-tm="decimal-spacing" class="space-y-1.5"><p>a</p><p>b</p></div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Classes without rules and icon libraries</h2>
+      <div data-tm="class-no-rule" class="totally-unknown-class another-made-up p-2">classes with no CSS rule</div>
+      <svg data-tm="icon-library" class="lucide lucide-star h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg>
+      <div data-tm="custom-class-with-rule" class="custom-card">custom class with a plain-CSS rule, hover and media variants</div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Class-less elements styled by id</h2>
+      <div data-tm="id-only" id="id-only">id-only rule, no class</div>
+      <div data-tm="id-important" id="id-important" style="text-transform: uppercase">id rule with !important and an inline style</div>
+      <div data-tm="inline-style-only" style="margin-top: 8px; color: oklch(45% 0.15 145)">inline style only</div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Duplicate heading</h2>
+      <p>First section with this heading.</p>
+    </section>
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">Duplicate heading</h2>
+      <p>Second section with the same heading.</p>
+    </section>
+  </main>
+  <aside aria-label="Probe badge" id="probe-badge" style="position: fixed; right: 12px; bottom: 12px">probe</aside>
+</body>
+</html>
