@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mode layer statement</title>
+  <style>
+    @layer alpha, beta;
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #ffffff; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .card { border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap" data-h="wrap">
+    <h1 data-h="h1">Only a layer statement</h1>
+    <div class="card" data-h="card"><p data-h="p">@layer alpha, beta; with no layer blocks.</p></div>
+    <a data-h="back" href="./">Back</a>
+  </div>
+</body>
+</html>

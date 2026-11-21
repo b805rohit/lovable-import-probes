@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mode vars</title>
+  <style>
+    :root { --brand: #c2410c; --gap: 14px; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #ffffff; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .card { border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .accent { color: var(--brand); margin-bottom: var(--gap); }
+  </style>
+</head>
+<body>
+  <div class="wrap" data-h="wrap">
+    <h1 class="accent" data-h="h1">Custom properties</h1>
+    <p data-h="p">Colour and margin come from var().</p>
+    <a data-h="back" href="./">Back</a>
+  </div>
+</body>
+</html>

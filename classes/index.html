@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class names</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #ffffff; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .card { border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .p-4 { padding: 18px; }
+    .bg-brand { background: #fde68a; }
+    .flex { display: flex; gap: 8px; }
+    .bogus-thing { letter-spacing: 0.05em; }
+    .hidden { display: block; color: #9f1239; }
+    .menu.is-open { display: block; }
+    .hover\:underline:hover { text-decoration: underline; }
+    .lucide-x { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <div class="wrap" data-h="wrap">
+    <nav data-h="nav"><a data-h="nav-0" href="Docs/Guide/">Guide</a> <a data-h="nav-1" href="import-layer.html">Import layer</a> <a data-h="nav-2" href="tailwind-cdn.html">Tailwind CDN</a> <a data-h="nav-3" href="print.html">Print</a></nav>
+    <h1 data-h="h1">Class names that look like utilities</h1>
+    <div class="p-4 card" data-h="p4">p-4 defined by the site</div>
+    <div class="bg-brand card" data-h="bgbrand">bg-brand defined by the site</div>
+    <div class="flex" data-h="flex"><span data-h="f1">a</span><span data-h="f2">b</span></div>
+    <div class="bogus-thing" data-h="bogus">bogus-thing</div>
+    <div class="hidden" data-h="hidden">hidden shown in red</div>
+    <ul class="menu" data-h="menu"><li data-h="m1">menu item</li></ul>
+    <a class="hover:underline" data-h="hoverlink" href="#top">hover underline</a>
+    <svg class="lucide lucide-x" data-h="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2"/></svg>
+    <div class="no-rule-here another-one" data-h="norule">classes with no rule</div>
+    <p data-h="inline">Some <b data-h="b">bold</b> and <i data-h="i">italic</i> words, <a data-h="inlink" href="#top">a link</a>, and a <code data-h="code">code</code> span.</p>
+    <ul data-h="list"><li data-h="li1">first <strong data-h="s1">item</strong></li><li data-h="li2">second
+      <ul data-h="sub"><li data-h="li3">nested</li></ul></li></ul>
+  </div>
+</body>
+</html>

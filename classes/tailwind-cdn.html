@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tailwind CDN plus a plain rule</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.13"></script>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #ffffff; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .card { border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .plain-rule { border-left: 4px solid #2563eb; padding-left: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap" data-h="wrap">
+    <h1 class="text-2xl font-bold" data-h="h1">Tailwind from the CDN</h1>
+    <p class="plain-rule" data-h="plain">One plain rule next to runtime Tailwind.</p>
+    <p class="mt-2 text-sm text-gray-500" data-h="tw">Utility classes only.</p>
+    <a data-h="back" href="./">Back</a>
+  </div>
+</body>
+</html>

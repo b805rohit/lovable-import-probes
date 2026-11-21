@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Print and important</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #ffffff; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .card { border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .shout { text-transform: uppercase !important; }
+    .btn { background: #111827; color: #ffffff; padding: 6px 10px; border-radius: 4px; }
+    .btn:hover { background: #374151; }
+    @media print { .no-print { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap" data-h="wrap">
+    <h1 class="shout" data-h="h1">important and print</h1>
+    <button class="btn" data-h="btn">Button</button>
+    <p class="no-print" data-h="np">Hidden when printed.</p>
+    <a data-h="back" href="./">Back</a>
+  </div>
+</body>
+</html>
